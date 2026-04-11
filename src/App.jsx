@@ -68,17 +68,14 @@ const STUDIO_CONFIG = {
 // ═══════════════════════════════════════════════════════════════
 //  STUDIO IMAGES — ELU Yoga CDN URLs
 // ═══════════════════════════════════════════════════════════════
+const ELU_CDN = "https://images.squarespace-cdn.com/content/v1/66e26ccf756604774e4c15fd";
 const STUDIO_IMAGES = {
-  hero: "https://images.squarespace-cdn.com/content/v1/66e26ccf756604774e4c15fd/f326d4ce-03f0-4d9d-80a4-e7427f659754/cairn+photo+unsplash.jpg?format=750w",
-  classesHero: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/1cbeba43-f171-4dab-abca-c902ad398886/_22A9612_websize.jpg?format=500w",
-  teachersHero: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/92396394-29ca-4e3e-9637-1c0ad195e317/_V4A5227.jpg?format=500w",
-  studioShot: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/8565334a-5305-4aa7-b0ed-131780854b8b/_22A2744_websize.jpg?format=500w",
-  pricingHero: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/38f39b80-7813-4bbe-b0ad-80768fd25094/_22A9871.jpg?format=500w",
-  logo: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/7c03e79d-f89c-4965-bc0f-c26c2887607c/TheRiverYoga-logo-horizontal-white.png?format=300w",
-  alexSimonian: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/a6e1dc8a-4a1e-4a34-8675-aa4523d8ee11/Alex1.jpg?format=300w",
-  amorFlores: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/b69e7038-c5d1-46cf-b14a-5d45b61b6760/Amor.jpg?format=300w",
-  andyJans: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/b503eede-a19a-479a-be2b-444281f857cb/Andy.jpg?format=300w",
-  angelinaCilella: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/dc04aa4d-9067-4984-bae1-caf215e04ebe/Cilella.jpg?format=300w",
+  hero: `${ELU_CDN}/f326d4ce-03f0-4d9d-80a4-e7427f659754/cairn+photo+unsplash.jpg?format=750w`,
+  classesHero: `${ELU_CDN}/1726187271508-OOGJTBO9QGTJL3XBWZ8T/unsplash-image-eT-3XK9h5tU.jpg?format=500w`,
+  teachersHero: `${ELU_CDN}/1726187304820-5NVTSPTXP5ACEKUGY6PJ/unsplash-image-UxkcSzRWM2s.jpg?format=500w`,
+  studioShot: `${ELU_CDN}/068321e9-b7cf-4bed-8ce9-17d9e839eb1d/standing+edited.JPG?format=500w`,
+  pricingHero: `${ELU_CDN}/1726187721231-4CIGNYFFG0WDTSC334E1/unsplash-image-nDnLMXYqOVs.jpg?format=500w`,
+  logo: `${ELU_CDN}/fb618ff2-5f7f-4561-b668-6645abb51bf9/social+logo.jpg?format=300w`,
 };
 
 // ═══════════════════════════════════════════════════════════════
