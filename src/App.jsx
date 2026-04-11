@@ -75,6 +75,8 @@ const STUDIO_IMAGES = {
   teachersHero: `${ELU_CDN}/1726187304820-5NVTSPTXP5ACEKUGY6PJ/unsplash-image-UxkcSzRWM2s.jpg?format=500w`,
   studioShot: `${ELU_CDN}/068321e9-b7cf-4bed-8ce9-17d9e839eb1d/standing+edited.JPG?format=500w`,
   pricingHero: `${ELU_CDN}/1726187721231-4CIGNYFFG0WDTSC334E1/unsplash-image-nDnLMXYqOVs.jpg?format=500w`,
+  eventsHero: `${ELU_CDN}/1726201086900-GPAE5I9QKJ32U0IJ0VT0/unsplash-image-AeqlmVWtzFA.jpg?format=500w`,
+  practiceHero: `${ELU_CDN}/1726190939262-F0UNMGKYL02VMLSMT9S4/unsplash-image-YVOiX8vB8N4.jpg?format=500w`,
   logo: `${ELU_CDN}/fb618ff2-5f7f-4561-b668-6645abb51bf9/social+logo.jpg?format=300w`,
 };
 
@@ -252,6 +254,19 @@ const ADMIN_CHARTS = {
 //  SHARED COMPONENTS
 // ═══════════════════════════════════════════════════════════════
 const AppContext = createContext();
+
+function PageHero({ image, title, subtitle }) {
+  return (
+    <div style={{ position: "relative", overflow: "hidden", padding: "32px 16px 24px", color: "#fff", minHeight: 160 }}>
+      <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.55)" }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.5) 100%)" }} />
+      <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "flex-end", minHeight: 96 }}>
+        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 32, fontWeight: 600, margin: 0, letterSpacing: "-0.02em" }}>{title}</h1>
+        {subtitle && <p style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", margin: "4px 0 0", lineHeight: 1.4 }}>{subtitle}</p>}
+      </div>
+    </div>
+  );
+}
 
 function PageTitle({ title, subtitle }) {
   return (
@@ -629,9 +644,9 @@ function ClassesPage() {
   const [expandedPractice, setExpandedPractice] = useState(null);
   const allPractices = [TODAYS_FOCUS, ...PAST_PRACTICES, UPCOMING_PRACTICE].sort((a, b) => b.date.localeCompare(a.date));
   return (
-    <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Classes" subtitle="Past, present, and upcoming practice" />
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+    <div>
+      <PageHero image={STUDIO_IMAGES.classesHero} title="Classes" subtitle="Past, present, and upcoming practice" />
+      <div style={{ display: "flex", flexDirection: "column", gap: 12, padding: "16px 16px 0" }}>
         {allPractices.map(p => (
           <PracticeCardFull key={p.id} practice={p} expanded={expandedPractice === p.id} onToggle={() => setExpandedPractice(expandedPractice === p.id ? null : p.id)} />
         ))}
@@ -653,8 +668,9 @@ function SchedulePage() {
   ) || [];
 
   return (
-    <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Schedule" subtitle="Reserve your spot — classes fill up fast" />
+    <div>
+      <PageHero image={STUDIO_IMAGES.classesHero} title="Schedule" subtitle="Reserve your spot -- classes fill up fast" />
+      <div style={{ padding: "16px 16px 0" }}>
       {/* Day selector */}
       <div style={{ display: "flex", gap: 4, marginBottom: 12, overflowX: "auto", paddingBottom: 4 }}>
         {days.map((d, i) => (
@@ -694,6 +710,7 @@ function SchedulePage() {
           );
         })}
       </div>
+      </div>
     </div>
   );
 }
@@ -708,8 +725,9 @@ function PracticePage() {
   const totalClasses = 112;
 
   return (
-    <div style={{ padding: "0 16px" }}>
-      <PageTitle title="My Practice" subtitle="Track your journey and celebrate growth" />
+    <div>
+      <PageHero image={STUDIO_IMAGES.practiceHero} title="My Practice" subtitle="Track your journey and celebrate growth" />
+      <div style={{ padding: "16px 16px 0" }}>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 20 }}>
         <div style={{ background: T.accentGhost, border: `1px solid ${T.accentBorder}`, borderRadius: 12, padding: "14px 12px", textAlign: "center" }}>
           <Flame size={20} color={T.accent} style={{ margin: "0 auto 4px" }} />
@@ -784,6 +802,7 @@ function PracticePage() {
           })}
         </div>
       )}
+      </div>
     </div>
   );
 }
@@ -792,9 +811,9 @@ function PracticePage() {
 function CommunityPage() {
   const { feedCelebrations, celebrateFeed } = useContext(AppContext);
   return (
-    <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Community" subtitle="Celebrate your River fam" />
-      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+    <div>
+      <PageHero image={STUDIO_IMAGES.studioShot} title="Community" subtitle="Celebrate your ELU fam" />
+      <div style={{ display: "flex", flexDirection: "column", gap: 10, padding: "16px 16px 0" }}>
         {COMMUNITY_FEED.map(item => {
           const myC = feedCelebrations[item.id] || 0;
           return (
@@ -826,9 +845,9 @@ function CommunityPage() {
 function TeachersPage() {
   const [expandedTeacher, setExpandedTeacher] = useState(null);
   return (
-    <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Teachers" subtitle="Meet ELU teaching team" />
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+    <div>
+      <PageHero image={STUDIO_IMAGES.teachersHero} title="Teachers" subtitle="Meet the ELU teaching team" />
+      <div style={{ display: "flex", flexDirection: "column", gap: 12, padding: "16px 16px 0" }}>
         {TEACHERS.map(teacher => {
           const expanded = expandedTeacher === teacher.id;
           return (
@@ -866,9 +885,9 @@ function TeachersPage() {
 // ——— MEMBERSHIP PAGE ———
 function MembershipPage() {
   return (
-    <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Membership" subtitle="Find your path to practice" />
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+    <div>
+      <PageHero image={STUDIO_IMAGES.pricingHero} title="Membership" subtitle="Find your path to practice" />
+      <div style={{ display: "flex", flexDirection: "column", gap: 12, padding: "16px 16px 0" }}>
         {MEMBERSHIP_TIERS.map(tier => (
           <div key={tier.id} style={{ background: T.bgCard, border: `1px solid ${tier.popular ? T.accent : T.border}`, borderRadius: 14, padding: "20px 18px", position: "relative", overflow: "hidden" }}>
             {tier.popular && (
@@ -900,8 +919,9 @@ function MembershipPage() {
 // ——— EVENTS PAGE ———
 function EventsPage() {
   return (
-    <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Events" subtitle="Workshops, trainings, and signature experiences" />
+    <div>
+      <PageHero image={STUDIO_IMAGES.eventsHero} title="Events" subtitle="Workshops, trainings, and signature experiences" />
+      <div style={{ padding: "16px 16px 0" }}>
       {EVENTS.map(ev => (
         <div key={ev.id} style={{ background: T.bgCard, border: `1px solid ${T.border}`, borderRadius: 14, overflow: "hidden", marginBottom: 16 }}>
           <div style={{ background: `linear-gradient(135deg, ${T.bg}, hsl(0,0%,12%))`, padding: "20px 18px", color: "#fff" }}>
@@ -922,6 +942,7 @@ function EventsPage() {
           </div>
         </div>
       ))}
+      </div>
     </div>
   );
 }
@@ -929,8 +950,9 @@ function EventsPage() {
 // ——— LOCATIONS PAGE ———
 function LocationsPage() {
   return (
-    <div style={{ padding: "0 16px" }}>
-      <PageTitle title="Our Studios" subtitle="Three neighborhoods, one River" />
+    <div>
+      <PageHero image={STUDIO_IMAGES.studioShot} title="Our Studios" subtitle="Three neighborhoods, one ELU" />
+      <div style={{ padding: "16px 16px 0" }}>
       {STUDIO_CONFIG.locations.map(loc => (
         <div key={loc.id} style={{ background: T.bgCard, border: `1px solid ${T.border}`, borderRadius: 14, padding: "20px 18px", marginBottom: 12 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
@@ -950,6 +972,7 @@ function LocationsPage() {
           </div>
         </div>
       ))}
+      </div>
     </div>
   );
 }
@@ -1377,6 +1400,7 @@ export default function App({ onAdminChange, forceAdmin }) {
   const mainTabs = [
     { id: "home", label: "Home", icon: Home },
     { id: "schedule", label: "Schedule", icon: CalendarDays },
+    { id: "community", label: "Community", icon: Heart },
     { id: "practice", label: "Practice", icon: TrendingUp },
     { id: "more", label: "More", icon: Menu },
   ];
@@ -1385,7 +1409,6 @@ export default function App({ onAdminChange, forceAdmin }) {
     { id: "classes", label: "Classes", icon: Waves },
     { id: "teachers", label: "Teachers", icon: Users },
     { id: "events", label: "Events", icon: Calendar },
-    { id: "community", label: "Community", icon: Heart },
     { id: "membership", label: "Membership", icon: CreditCard },
     { id: "locations", label: "Studios", icon: MapPin },
   ];
