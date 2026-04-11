@@ -1,23 +1,42 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import {
   CalendarDays, TrendingUp, Heart, Users, CreditCard, Calendar,
-  Bell, Shield, Waves, MapPin, Sparkles, Zap, ChevronRight, ExternalLink
+  Bell, Shield, Waves, MapPin, Sparkles, Zap, ChevronRight, Mountain
 } from "lucide-react";
 import App from "./App";
 import config from "./demo.config.js";
 
-const iconMap = { CalendarDays, TrendingUp, Heart, Users, CreditCard, Calendar, Bell, Shield, Waves, MapPin, Sparkles, Zap };
+const iconMap = { CalendarDays, TrendingUp, Heart, Users, CreditCard, Calendar, Bell, Shield, Waves, MapPin, Sparkles, Zap, Mountain };
 const getIcon = (name) => iconMap[name] || Shield;
 
 export default function DemoWrapper() {
+  const [isAdmin, setIsAdmin] = useState(false);
   const accent = config.accentColor;
-  const accentLight = config.accentColorLight;
   const accentDark = config.accentColorDark;
 
+  const handleAdminChange = (adminState) => {
+    setIsAdmin(adminState);
+  };
+
+  // Admin mode: full browser takeover -- no phone frame, no sidebars
+  if (isAdmin) {
+    return (
+      <div style={{ height: "100vh", overflow: "hidden", fontFamily: "'DM Sans', system-ui, sans-serif" }}>
+        <App onAdminChange={handleAdminChange} forceAdmin={true} />
+        <style>{`
+          body { overflow: hidden; }
+          * { scrollbar-width: none; }
+          *::-webkit-scrollbar { display: none; }
+        `}</style>
+      </div>
+    );
+  }
+
+  // Consumer mode: phone frame with sidebars
   return (
     <div style={{ display: "flex", height: "100vh", overflow: "hidden", background: "#f0f4f8", fontFamily: "'DM Sans', system-ui, sans-serif" }}>
 
-      {/* ── LEFT SIDEBAR ── */}
+      {/* -- LEFT SIDEBAR -- */}
       <aside style={{
         width: 320, minWidth: 320, height: "100vh", overflowY: "auto",
         padding: "32px 28px", display: "flex", flexDirection: "column", gap: 20,
@@ -58,11 +77,11 @@ export default function DemoWrapper() {
         </div>
 
         <div style={{ marginTop: "auto", paddingTop: 20 }}>
-          <p style={{ fontSize: 11, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.1em" }}>Built by LUMI — LumiClass.app</p>
+          <p style={{ fontSize: 11, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.1em" }}>Built by LUMI -- LumiClass.app</p>
         </div>
       </aside>
 
-      {/* ── CENTER — PHONE FRAME ── */}
+      {/* -- CENTER: PHONE FRAME -- */}
       <div style={{
         flex: 1, display: "flex", alignItems: "center", justifyContent: "center",
         padding: "20px 0", minWidth: 0,
@@ -89,12 +108,12 @@ export default function DemoWrapper() {
             display: "flex", flexDirection: "column",
             position: "relative",
           }}>
-            <App />
+            <App onAdminChange={handleAdminChange} />
           </div>
         </div>
       </div>
 
-      {/* ── RIGHT SIDEBAR ── */}
+      {/* -- RIGHT SIDEBAR -- */}
       <aside style={{
         width: 340, minWidth: 340, height: "100vh", overflowY: "auto",
         padding: "32px 28px", display: "flex", flexDirection: "column", gap: 16,
@@ -122,7 +141,7 @@ export default function DemoWrapper() {
           borderRadius: 14, padding: "24px 22px", color: "#fff",
         }}>
           <h3 style={{ fontFamily: "'Outfit', serif", fontSize: 22, fontWeight: 700, margin: "0 0 8px" }}>Ready to Launch?</h3>
-          <p style={{ fontSize: 14, opacity: 0.85, margin: "0 0 16px", lineHeight: 1.5 }}>Get your own branded member loyalty app — built for your studio, your community, your growth.</p>
+          <p style={{ fontSize: 14, opacity: 0.85, margin: "0 0 16px", lineHeight: 1.5 }}>Get your own branded member loyalty app -- built for your studio, your community, your growth.</p>
           <button style={{
             padding: "12px 24px", borderRadius: 8, border: "2px solid rgba(255,255,255,0.3)",
             background: "rgba(255,255,255,0.15)", color: "#fff", fontWeight: 700, fontSize: 14,
@@ -134,14 +153,10 @@ export default function DemoWrapper() {
         </div>
       </aside>
 
-      {/* Responsive: hide sidebars on narrow screens */}
+      {/* Hide all scrollbars, responsive sidebar hiding */}
       <style>{`
-        .demo-sidebar-left, .demo-sidebar-right {
-          scrollbar-width: none;
-        }
-        .demo-sidebar-left::-webkit-scrollbar, .demo-sidebar-right::-webkit-scrollbar {
-          display: none;
-        }
+        * { scrollbar-width: none; }
+        *::-webkit-scrollbar { display: none; }
         @media (max-width: 1100px) {
           .demo-sidebar-left, .demo-sidebar-right { display: none !important; }
         }

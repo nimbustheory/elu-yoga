@@ -23,10 +23,10 @@ const demoConfig = {
   ],
   salesCards: [
     { icon: "Shield", title: "Admin Dashboard", desc: "Full analytics, member CRM, scheduling, and broadcast tools for your downtown Tacoma studio." },
-    { icon: "Mountain", title: "Built for Elu Yoga", desc: "Custom-designed around your Ashtanga, Vinyasa, and Yin offerings in downtown Tacoma." },
-    { icon: "Users", title: "Community First", desc: "Inclusive atmosphere, free community days, and land acknowledgment — all reflected in the app." },
+    { icon: "Mountain", title: "Built for ELU Yoga", desc: "Custom-designed around your hot flow, Vinyasa, and Yin offerings in downtown Tacoma." },
+    { icon: "Users", title: "Community First", desc: "Inclusive atmosphere, free community days, and land acknowledgment -- all reflected in the app." },
     { icon: "Sparkles", title: "Member Engagement", desc: "Practice streaks, milestone badges, and community celebrations keep members connected." },
-    { icon: "Zap", title: "Custom-Built for You", desc: "Purpose-designed for Elu Yoga's unique style, community, and multi-location needs." }
+    { icon: "Zap", title: "Custom-Built for You", desc: "Purpose-designed for ELU Yoga's unique style, community, and multi-location needs." }
   ],
 };
 

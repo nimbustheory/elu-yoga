@@ -13,7 +13,7 @@ import {
 } from "recharts";
 
 // ═══════════════════════════════════════════════════════════════
-//  STUDIO_CONFIG — ELU Yoga, Denver CO
+//  STUDIO_CONFIG -- ELU Yoga, Tacoma WA
 // ═══════════════════════════════════════════════════════════════
 const STUDIO_CONFIG = {
   name: "ELU",
@@ -21,7 +21,7 @@ const STUDIO_CONFIG = {
   tagline: "Find your flow. Join the movement.",
   logoMark: "E",
   logoImage: null,
-  description: "Your sanctuary in downtown Tacoma — a haven for balance, strength, and connection where everyone is celebrated. Elu means 'Living' in Estonian. — your third space for movement, breath, and real connection across three Denver neighborhoods.",
+  description: "Your sanctuary in downtown Tacoma -- a haven for balance, strength, and connection where everyone is celebrated. Elu means 'Living' in Estonian. Your third space for movement, breath, and real connection.",
   heroLine1: "YOGA.",
   heroLine2: "NO PRETENSE.",
 
@@ -33,9 +33,9 @@ const STUDIO_CONFIG = {
   social: { instagram: "@eluyoga" },
 
   locations: [
-    { id: "gt", name: "Golden Triangle", address: "1212 Delaware St", neighborhood: "Golden Triangle Creative District" },
-    { id: "ss", name: "Sunnyside", address: "4343 Fox St", neighborhood: "Historic Sunnyside" },
-    { id: "fp", name: "Five Points", address: "2500 Arapahoe St", neighborhood: "Five Points / RiNo" },
+    { id: "gt", name: "Golden Triangle", address: "1212 Delaware St", neighborhood: "Golden Triangle Creative District", city: "Tacoma" },
+    { id: "ss", name: "Sunnyside", address: "4343 Fox St", neighborhood: "Historic Sunnyside", city: "Tacoma" },
+    { id: "fp", name: "Five Points", address: "2500 Arapahoe St", neighborhood: "Five Points / RiNo", city: "Tacoma" },
   ],
 
   theme: {
@@ -57,7 +57,7 @@ const STUDIO_CONFIG = {
     guestPasses: true,
     milestones: true,
     multiLocation: true,
-    yogaOnTheRocks: true,
+    yogaOnTheWaterfront: true,
   },
 
   classCapacity: 35,
@@ -69,17 +69,16 @@ const STUDIO_CONFIG = {
 //  STUDIO IMAGES — ELU Yoga CDN URLs
 // ═══════════════════════════════════════════════════════════════
 const STUDIO_IMAGES = {
-  hero: "https://images.squarespace-cdn.com/content/v1/66e26ccf756604774e4c15fd/f326d4ce-03f0-4d9d-80a4-e7427f659754/cairn+photo+unsplash.jpg",
-  classesHero: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/1cbeba43-f171-4dab-abca-c902ad398886/_22A9612_websize.jpg",
-  teachersHero: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/92396394-29ca-4e3e-9637-1c0ad195e317/_V4A5227.jpg",
-  studioShot: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/8565334a-5305-4aa7-b0ed-131780854b8b/_22A2744_websize.jpg",
-  pricingHero: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/38f39b80-7813-4bbe-b0ad-80768fd25094/_22A9871.jpg",
-  logo: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/7c03e79d-f89c-4965-bc0f-c26c2887607c/TheRiverYoga-logo-horizontal-white.png",
-  // Teacher headshots
-  alexSimonian: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/a6e1dc8a-4a1e-4a34-8675-aa4523d8ee11/Alex1.jpg",
-  amorFlores: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/b69e7038-c5d1-46cf-b14a-5d45b61b6760/Amor.jpg",
-  andyJans: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/b503eede-a19a-479a-be2b-444281f857cb/Andy.jpg",
-  angelinaCilella: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/dc04aa4d-9067-4984-bae1-caf215e04ebe/Cilella.jpg",
+  hero: "https://images.squarespace-cdn.com/content/v1/66e26ccf756604774e4c15fd/f326d4ce-03f0-4d9d-80a4-e7427f659754/cairn+photo+unsplash.jpg?format=750w",
+  classesHero: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/1cbeba43-f171-4dab-abca-c902ad398886/_22A9612_websize.jpg?format=500w",
+  teachersHero: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/92396394-29ca-4e3e-9637-1c0ad195e317/_V4A5227.jpg?format=500w",
+  studioShot: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/8565334a-5305-4aa7-b0ed-131780854b8b/_22A2744_websize.jpg?format=500w",
+  pricingHero: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/38f39b80-7813-4bbe-b0ad-80768fd25094/_22A9871.jpg?format=500w",
+  logo: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/7c03e79d-f89c-4965-bc0f-c26c2887607c/TheRiverYoga-logo-horizontal-white.png?format=300w",
+  alexSimonian: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/a6e1dc8a-4a1e-4a34-8675-aa4523d8ee11/Alex1.jpg?format=300w",
+  amorFlores: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/b69e7038-c5d1-46cf-b14a-5d45b61b6760/Amor.jpg?format=300w",
+  andyJans: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/b503eede-a19a-479a-be2b-444281f857cb/Andy.jpg?format=300w",
+  angelinaCilella: "https://images.squarespace-cdn.com/content/v1/61a7e0205f1fac72e04744b9/dc04aa4d-9067-4984-bae1-caf215e04ebe/Cilella.jpg?format=300w",
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -171,7 +170,7 @@ const WEEKLY_SCHEDULE = [
 ];
 
 const COMMUNITY_FEED = [
-  { id: "cf1", user: "Sarah M.", milestone: "100 Classes", message: "100 classes at ELU. This community has become my family in Denver.", date: today, celebrations: 32 },
+  { id: "cf1", user: "Sarah M.", milestone: "100 Classes", message: "100 classes at ELU. This community has become my family in Tacoma.", date: today, celebrations: 32 },
   { id: "cf2", user: "Marcus J.", milestone: "30-Day Streak", message: "30 days straight on the mat. ELU helped me find my flow in more ways than one.", date: today, celebrations: 21 },
   { id: "cf3", user: "Elena R.", milestone: "All 3 Studios!", message: "Finally practiced at all three locations! Sunnyside's open-air garage door studio is magic.", date: offsetDate(-1), celebrations: 38 },
   { id: "cf4", user: "Dev P.", milestone: "1 Year Member", message: "One year as a River member. From my first intro class to now — what a journey.", date: offsetDate(-1), celebrations: 45 },
@@ -190,7 +189,7 @@ const MILESTONE_BADGES = {
 };
 
 const EVENTS = [
-  { id: "ev1", name: "Yoga on the Rocks", date: "2026-06-14", startTime: "07:00", type: "Signature Event", description: "Practice yoga at the iconic Red Rocks Amphitheatre. An unforgettable morning of movement with the Denver skyline and red sandstone formations as your backdrop.", fee: 35, maxParticipants: 200, registered: 168, status: "Registration Open" },
+  { id: "ev1", name: "Yoga on the Waterfront", date: "2026-06-14", startTime: "07:00", type: "Signature Event", description: "Practice yoga along the Tacoma waterfront at Ruston Way. An unforgettable morning of movement with Mt. Rainier and the Puget Sound as your backdrop.", fee: 35, maxParticipants: 200, registered: 168, status: "Registration Open" },
   { id: "ev2", name: "100hr Mat Pilates Teacher Training", date: "2026-04-03", startTime: "09:00", type: "Teacher Training", description: "Led by Xander Smith of HABITAT Pilates + Strength. A comprehensive 7-week training covering Mat Pilates fundamentals, anatomy, cueing, and sequencing.", fee: 2200, maxParticipants: 20, registered: 14, status: "Registration Open" },
   { id: "ev3", name: "Summer Solstice Flow + Celebration", date: "2026-06-20", startTime: "18:00", type: "Special Event", description: "Celebrate the longest day of the year with an outdoor sunset flow at Sunnyside's open-air studio followed by community gathering and refreshments from local partners.", fee: 25, maxParticipants: 50, registered: 33, status: "Registration Open" },
   { id: "ev4", name: "Candlelight Yin + Sound Journey", date: offsetDate(5), startTime: "19:30", type: "Workshop", description: "A deep restorative yin practice by candlelight accompanied by crystal singing bowls and ambient soundscapes. The perfect Friday evening reset.", fee: 30, maxParticipants: 30, registered: 24, status: "Open" },
@@ -205,7 +204,7 @@ const MEMBERSHIP_TIERS = [
 ];
 
 const ANNOUNCEMENTS = [
-  { id: "a1", title: "Yoga on the Rocks is back!", message: "Tickets for our signature Red Rocks sessions are live. These sell out fast — secure your spot for an unforgettable sunrise practice.", type: "celebration", pinned: true },
+  { id: "a1", title: "Yoga on the Waterfront is back!", message: "Tickets for our signature waterfront sessions are live. These sell out fast -- secure your spot for an unforgettable sunrise practice.", type: "celebration", pinned: true },
   { id: "a2", title: "Sunnyside Open-Air Studio", message: "The garage door is rolling up for the season! Catch warm breezes and sunshine during your practice at Sunnyside.", type: "info", pinned: false },
 ];
 
@@ -312,7 +311,7 @@ function CTACard() {
       <div style={{ position: "absolute", bottom: -20, right: 40, width: 80, height: 80, borderRadius: "50%", background: `${T.accent}10` }} />
       <Waves size={24} color={T.accent} style={{ marginBottom: 10 }} />
       <h3 style={{ fontFamily: "'Outfit', serif", fontSize: 24, margin: "0 0 6px", fontWeight: 600 }}>Jump Into ELU</h3>
-      <p style={{ fontSize: 13, color: "#94a3b8", margin: "0 0 16px", lineHeight: 1.5 }}>14 days of unlimited movement across all three Denver studios. Your journey starts here.</p>
+      <p style={{ fontSize: 13, color: "#94a3b8", margin: "0 0 16px", lineHeight: 1.5 }}>14 days of unlimited movement across all three Tacoma studios. Your journey starts here.</p>
       <button style={{ padding: "12px 28px", borderRadius: 8, border: "none", fontWeight: 700, cursor: "pointer", background: T.accent, color: "#fff", fontFamily: "'Outfit', serif", fontSize: 17, letterSpacing: "0.02em" }}>Start Your Intro — $59</button>
     </div>
   );
@@ -403,8 +402,8 @@ function SettingsModal({ onClose }) {
 function NotificationsModal({ onClose }) {
   const notifs = [
     { id: "n1", title: "Class Reminder", msg: "Hot River Flow with Alex starts in 1 hour at Golden Triangle", time: "1h ago", read: false },
-    { id: "n2", title: "Milestone Unlocked!", msg: "You've hit 50 classes at ELU! 🎉", time: "Yesterday", read: false },
-    { id: "n3", title: "New Event", msg: "Yoga on the Rocks tickets are now available", time: "2 days ago", read: true },
+    { id: "n2", title: "Milestone Unlocked!", msg: "You've hit 50 classes at ELU!", time: "Yesterday", read: false },
+    { id: "n3", title: "New Event", msg: "Yoga on the Waterfront tickets are now available", time: "2 days ago", read: true },
     { id: "n4", title: "Community Love", msg: "3 people celebrated your 50-class milestone", time: "3 days ago", read: true },
   ];
   return (
@@ -946,7 +945,7 @@ function LocationsPage() {
               <p style={{ fontSize: 13, color: T.textMuted, margin: "2px 0 0" }}>{loc.neighborhood}</p>
             </div>
           </div>
-          <p style={{ fontSize: 13, color: "#4a5568", margin: "0 0 12px" }}>{loc.address}, Denver, CO</p>
+          <p style={{ fontSize: 13, color: "#4a5568", margin: "0 0 12px" }}>{loc.address}, {loc.city || "Tacoma"}, WA</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
             {["Hot River Flow", "Sculpt", "Pilates", "Yin"].map(c => (
               <span key={c} style={{ fontSize: 11, fontWeight: 600, padding: "3px 8px", borderRadius: 6, background: T.accentGhost, color: T.accent }}>{c}</span>
@@ -1318,7 +1317,7 @@ function AdminCommsPage() {
 }
 
 function AdminSettingsPage() {
-  const [settings, setSettings] = useState({ studioName: "ELU Yoga", timeZone: "America/Denver", theme: "dark" });
+  const [settings, setSettings] = useState({ studioName: "ELU Yoga", timeZone: "America/Los_Angeles", theme: "dark" });
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#fff", margin: 0 }}>Settings</h1>
@@ -1350,9 +1349,9 @@ function AdminSettingsPage() {
 // ═══════════════════════════════════════════════════════════════
 //  MAIN APP
 // ═══════════════════════════════════════════════════════════════
-export default function App() {
-  const [page, setPage] = useState("home");
-  const [isAdmin, setIsAdmin] = useState(false);
+export default function App({ onAdminChange, forceAdmin }) {
+  const [page, setPage] = useState(forceAdmin ? "admin-dashboard" : "home");
+  const [isAdmin, setIsAdmin] = useState(!!forceAdmin);
   const [showSettings, setShowSettings] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -1364,6 +1363,10 @@ export default function App() {
   useEffect(() => {
     if (contentRef.current) contentRef.current.scrollTo(0, 0);
   }, [page]);
+
+  useEffect(() => {
+    if (onAdminChange) onAdminChange(isAdmin);
+  }, [isAdmin, onAdminChange]);
 
   const handleLogoClick = () => {
     if (page !== "home") setPage("home");
@@ -1433,7 +1436,7 @@ export default function App() {
         <div style={{ display: "flex", minHeight: "100vh", background: "#0d1520", fontFamily: "'DM Sans', system-ui, sans-serif", color: "#e2e8f0" }}>
           <aside style={{ width: 240, background: "#111827", borderRight: "1px solid #2a2a2a", display: "flex", flexDirection: "column", position: "fixed", height: "100vh", zIndex: 10 }}>
             <div style={{ padding: "16px 14px", borderBottom: "1px solid #2a2a2a", display: "flex", alignItems: "center", gap: 10 }}>
-              <div style={{ width: 36, height: 36, borderRadius: 8, background: T.accent, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Outfit', serif", fontSize: 18, color: "#fff", fontWeight: 700 }}>R</div>
+              <div style={{ width: 36, height: 36, borderRadius: 8, background: T.accent, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Outfit', serif", fontSize: 18, color: "#fff", fontWeight: 700 }}>E</div>
               <div>
                 <span style={{ fontFamily: "'Outfit', serif", fontSize: 18, color: "#fff", fontWeight: 600, display: "block", lineHeight: 1 }}>ELU</span>
                 <span style={{ fontSize: 9, color: "#71717a", textTransform: "uppercase", letterSpacing: "0.15em" }}>Admin Panel</span>
@@ -1471,7 +1474,7 @@ export default function App() {
         {/* Header */}
         <header style={{ position: "sticky", top: 0, zIndex: 30, background: T.bg, color: "#fff", padding: "10px 14px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <button onClick={handleLogoClick} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#fff" }}>
-            <div style={{ width: 38, height: 38, borderRadius: 10, background: T.accent, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Outfit', serif", fontSize: 20, color: "#fff", fontWeight: 700 }}>R</div>
+            <div style={{ width: 38, height: 38, borderRadius: 10, background: T.accent, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Outfit', serif", fontSize: 20, color: "#fff", fontWeight: 700 }}>E</div>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span style={{ fontFamily: "'Outfit', serif", fontSize: 20, lineHeight: 1, letterSpacing: "0.02em", fontWeight: 600 }}>ELU</span>
               <span style={{ fontSize: 9, color: "#71717a", textTransform: "uppercase", letterSpacing: "0.15em" }}>YOGA</span>
