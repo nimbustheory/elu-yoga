@@ -70,13 +70,15 @@ const STUDIO_CONFIG = {
 // ═══════════════════════════════════════════════════════════════
 const ELU_CDN = "https://images.squarespace-cdn.com/content/v1/66e26ccf756604774e4c15fd";
 const STUDIO_IMAGES = {
-  hero: `${ELU_CDN}/f326d4ce-03f0-4d9d-80a4-e7427f659754/cairn+photo+unsplash.jpg?format=750w`,
-  classesHero: `${ELU_CDN}/1726187271508-OOGJTBO9QGTJL3XBWZ8T/unsplash-image-eT-3XK9h5tU.jpg?format=500w`,
-  teachersHero: `${ELU_CDN}/1726187304820-5NVTSPTXP5ACEKUGY6PJ/unsplash-image-UxkcSzRWM2s.jpg?format=500w`,
-  studioShot: `${ELU_CDN}/068321e9-b7cf-4bed-8ce9-17d9e839eb1d/standing+edited.JPG?format=500w`,
-  pricingHero: `${ELU_CDN}/1726187721231-4CIGNYFFG0WDTSC334E1/unsplash-image-nDnLMXYqOVs.jpg?format=500w`,
-  eventsHero: `${ELU_CDN}/1726201086900-GPAE5I9QKJ32U0IJ0VT0/unsplash-image-AeqlmVWtzFA.jpg?format=500w`,
-  practiceHero: `${ELU_CDN}/1726190939262-F0UNMGKYL02VMLSMT9S4/unsplash-image-YVOiX8vB8N4.jpg?format=500w`,
+  hero: `${ELU_CDN}/068321e9-b7cf-4bed-8ce9-17d9e839eb1d/standing+edited.JPG?format=750w`,
+  scheduleHero: "https://images.unsplash.com/photo-1529693662653-9d480530a697?w=800&q=80",
+  communityHero: "https://images.unsplash.com/photo-1559782004-0485f6b3529f?w=800&q=80",
+  practiceHero: "https://images.unsplash.com/photo-1697274834392-04ff3b76ef20?w=800&q=80",
+  classesHero: "https://images.unsplash.com/photo-1599447421321-1c96150f0f6b?w=800&q=80",
+  teachersHero: "https://images.unsplash.com/photo-1767611134797-b596a27a1aea?w=800&q=80",
+  membershipHero: "https://images.unsplash.com/photo-1640031760412-c6eee704d55d?w=800&q=80",
+  eventsHero: "https://images.unsplash.com/photo-1758797315487-b3b225dff7d8?w=800&q=80",
+  locationsHero: "https://images.unsplash.com/photo-1716377169308-a42f572d04a6?w=800&q=80",
   logo: `${ELU_CDN}/fb618ff2-5f7f-4561-b668-6645abb51bf9/social+logo.jpg?format=300w`,
 };
 
@@ -669,7 +671,7 @@ function SchedulePage() {
 
   return (
     <div>
-      <PageHero image={STUDIO_IMAGES.classesHero} title="Schedule" subtitle="Reserve your spot -- classes fill up fast" />
+      <PageHero image={STUDIO_IMAGES.scheduleHero} title="Schedule" subtitle="Reserve your spot -- classes fill up fast" />
       <div style={{ padding: "16px 16px 0" }}>
       {/* Day selector */}
       <div style={{ display: "flex", gap: 4, marginBottom: 12, overflowX: "auto", paddingBottom: 4 }}>
@@ -812,7 +814,7 @@ function CommunityPage() {
   const { feedCelebrations, celebrateFeed } = useContext(AppContext);
   return (
     <div>
-      <PageHero image={STUDIO_IMAGES.studioShot} title="Community" subtitle="Celebrate your ELU fam" />
+      <PageHero image={STUDIO_IMAGES.communityHero} title="Community" subtitle="Celebrate your ELU fam" />
       <div style={{ display: "flex", flexDirection: "column", gap: 10, padding: "16px 16px 0" }}>
         {COMMUNITY_FEED.map(item => {
           const myC = feedCelebrations[item.id] || 0;
@@ -886,7 +888,7 @@ function TeachersPage() {
 function MembershipPage() {
   return (
     <div>
-      <PageHero image={STUDIO_IMAGES.pricingHero} title="Membership" subtitle="Find your path to practice" />
+      <PageHero image={STUDIO_IMAGES.membershipHero} title="Membership" subtitle="Find your path to practice" />
       <div style={{ display: "flex", flexDirection: "column", gap: 12, padding: "16px 16px 0" }}>
         {MEMBERSHIP_TIERS.map(tier => (
           <div key={tier.id} style={{ background: T.bgCard, border: `1px solid ${tier.popular ? T.accent : T.border}`, borderRadius: 14, padding: "20px 18px", position: "relative", overflow: "hidden" }}>
@@ -951,7 +953,7 @@ function EventsPage() {
 function LocationsPage() {
   return (
     <div>
-      <PageHero image={STUDIO_IMAGES.studioShot} title="Our Studios" subtitle="Three neighborhoods, one ELU" />
+      <PageHero image={STUDIO_IMAGES.locationsHero} title="Our Studios" subtitle="Three neighborhoods, one ELU" />
       <div style={{ padding: "16px 16px 0" }}>
       {STUDIO_CONFIG.locations.map(loc => (
         <div key={loc.id} style={{ background: T.bgCard, border: `1px solid ${T.border}`, borderRadius: 14, padding: "20px 18px", marginBottom: 12 }}>
