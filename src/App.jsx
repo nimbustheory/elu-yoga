@@ -258,8 +258,8 @@ const AppContext = createContext();
 function PageHero({ image, title, subtitle }) {
   return (
     <div style={{ position: "relative", overflow: "hidden", padding: "32px 16px 24px", color: "#fff", minHeight: 160 }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.55)" }} />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.5) 100%)" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.75)" }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.02) 40%, rgba(0,0,0,0.35) 100%)" }} />
       <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "flex-end", minHeight: 96 }}>
         <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 32, fontWeight: 600, margin: 0, letterSpacing: "-0.02em" }}>{title}</h1>
         {subtitle && <p style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", margin: "4px 0 0", lineHeight: 1.4 }}>{subtitle}</p>}
