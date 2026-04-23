@@ -5,7 +5,8 @@ import {
   PartyPopper, ArrowUpRight, ArrowDownRight, Award, DollarSign, LayoutDashboard,
   UserCheck, Megaphone, LogOut, Plus, Edit3, Send, Check, Search, Copy, Info,
   CircleCheck, UserPlus, Heart, Flame, Star, Sun, Moon, Wind, Sparkles,
-  Mountain, Leaf, Music, Gift, Share2, MapPin, Droplets, Waves, Zap, Timer
+  Mountain, Leaf, Music, Gift, Share2, MapPin, Droplets, Waves, Zap, Timer,
+  AlignJustify
 } from "lucide-react";
 import {
   BarChart, Bar, AreaChart, Area, XAxis, YAxis,
@@ -259,12 +260,12 @@ const AppContext = createContext();
 
 function PageHero({ image, title, subtitle }) {
   return (
-    <div style={{ position: "relative", overflow: "hidden", padding: "38px 16px 28px", color: "#fff", minHeight: 192 }}>
+    <div style={{ position: "relative", overflow: "hidden", padding: "28px 18px 22px", color: "#fff", minHeight: 220, marginBottom: 16 }}>
       <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.75)" }} />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.02) 40%, rgba(0,0,0,0.35) 100%)" }} />
-      <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "flex-end", minHeight: 115 }}>
-        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 32, fontWeight: 600, margin: 0, letterSpacing: "-0.02em" }}>{title}</h1>
-        {subtitle && <p style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", margin: "4px 0 0", lineHeight: 1.4 }}>{subtitle}</p>}
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.04) 45%, rgba(0,0,0,0.35) 100%)" }} />
+      <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "flex-end", minHeight: 170 }}>
+        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: "3.5rem", lineHeight: 1, fontWeight: 600, margin: 0, letterSpacing: "-0.03em", textShadow: "0 2px 18px rgba(0,0,0,0.25)" }}>{title}</h1>
+        {subtitle && <p style={{ fontSize: 14, color: "rgba(255,255,255,0.92)", margin: "8px 0 0", lineHeight: 1.4, maxWidth: "85%", textShadow: "0 1px 10px rgba(0,0,0,0.3)" }}>{subtitle}</p>}
       </div>
     </div>
   );
@@ -381,8 +382,8 @@ function PracticeCardFull({ practice, expanded, onToggle }) {
 
 function AdminCard({ title, children }) {
   return (
-    <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 12, padding: 18 }}>
-      <h3 style={{ fontFamily: "'Outfit', serif", fontSize: 18, color: "#e2e8f0", margin: "0 0 14px" }}>{title}</h3>
+    <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 18, boxShadow: "0 1px 2px rgba(16,24,40,0.04)" }}>
+      <h3 style={{ fontFamily: "'Outfit', serif", fontSize: 18, color: T.text, margin: "0 0 14px" }}>{title}</h3>
       {children}
     </div>
   );
@@ -512,18 +513,18 @@ function HomePage() {
 
   return (
     <div>
-      {/* Hero with image */}
-      <div style={{ position: "relative", overflow: "hidden", padding: "36px 16px 28px", color: "#fff", minHeight: 220 }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${STUDIO_IMAGES.hero})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.7)" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.45) 100%)" }} />
-        <p style={{ fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.15em", color: T.accent, margin: "0 0 8px", position: "relative", zIndex: 1 }}>{formatDateLong(today)}</p>
-        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 44, margin: 0, lineHeight: 1, fontWeight: 300, letterSpacing: "-0.02em", position: "relative", zIndex: 1 }}>{STUDIO_CONFIG.heroLine1}</h1>
-        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 44, margin: "0 0 10px", lineHeight: 1, fontWeight: 700, letterSpacing: "-0.02em", position: "relative", zIndex: 1 }}>{STUDIO_CONFIG.heroLine2}</h1>
-        <p style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", margin: 0, lineHeight: 1.5, position: "relative", zIndex: 1 }}>{STUDIO_CONFIG.description}</p>
+      {/* Hero with image — home gets taller hero */}
+      <div style={{ position: "relative", overflow: "hidden", padding: "40px 18px 28px", color: "#fff", minHeight: 300, marginBottom: 16 }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${STUDIO_IMAGES.hero})`, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.75)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.04) 45%, rgba(0,0,0,0.35) 100%)" }} />
+        <p style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", color: "#fff", margin: "0 0 14px", position: "relative", zIndex: 1, textShadow: "0 1px 8px rgba(0,0,0,0.3)" }}>{formatDateLong(today)}</p>
+        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: "3.5rem", margin: 0, lineHeight: 1, fontWeight: 300, letterSpacing: "-0.03em", position: "relative", zIndex: 1, textShadow: "0 2px 18px rgba(0,0,0,0.25)" }}>{STUDIO_CONFIG.heroLine1}</h1>
+        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: "3.5rem", margin: "0 0 14px", lineHeight: 1, fontWeight: 700, letterSpacing: "-0.03em", position: "relative", zIndex: 1, textShadow: "0 2px 18px rgba(0,0,0,0.25)" }}>{STUDIO_CONFIG.heroLine2}</h1>
+        <p style={{ fontSize: 14, color: "rgba(255,255,255,0.92)", margin: 0, lineHeight: 1.5, position: "relative", zIndex: 1, maxWidth: "85%", textShadow: "0 1px 10px rgba(0,0,0,0.3)" }}>{STUDIO_CONFIG.description}</p>
       </div>
 
       {/* Quick Actions */}
-      <div style={{ display: "flex", gap: 8, padding: "12px 16px 0", justifyContent: "center" }}>
+      <div style={{ display: "flex", gap: 8, padding: "20px 16px 0", justifyContent: "center" }}>
         {[
           { icon: CalendarDays, label: "Reserve", page: "schedule" },
           { icon: TrendingUp, label: "Practice", page: "practice" },
@@ -992,24 +993,24 @@ function AdminDashboard() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
       <div>
-        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#fff", margin: 0 }}>Dashboard</h1>
-        <p style={{ fontSize: 13, color: "#9ca3af", margin: "4px 0 0" }}>Welcome back. Here's what's happening across all three studios.</p>
+        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#111827", margin: 0 }}>Dashboard</h1>
+        <p style={{ fontSize: 13, color: "#6b7280", margin: "4px 0 0" }}>Welcome back. Here's what's happening across all three studios.</p>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 14 }}>
         {metrics.map((m, i) => (
-          <div key={i} style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 12, padding: 18 }}>
+          <div key={i} style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 18 }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 12 }}>
               <div style={{ width: 36, height: 36, borderRadius: 8, background: `${m.color}18`, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <m.icon size={18} color={m.color} />
               </div>
             </div>
-            <div style={{ fontFamily: "'Outfit', serif", fontSize: 30, color: "#fff", fontWeight: 700 }}>{m.value}</div>
+            <div style={{ fontFamily: "'Outfit', serif", fontSize: 30, color: "#111827", fontWeight: 700 }}>{m.value}</div>
             <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 4 }}>
               <span style={{ display: "flex", alignItems: "center", fontSize: 12, fontWeight: 600, color: m.positive ? "#4ade80" : "#f87171" }}>
                 {m.positive ? <ArrowUpRight size={12} /> : <ArrowDownRight size={12} />} {m.change}
               </span>
             </div>
-            <p style={{ fontSize: 13, color: "#9ca3af", margin: "6px 0 0" }}>{m.label}</p>
+            <p style={{ fontSize: 13, color: "#6b7280", margin: "6px 0 0" }}>{m.label}</p>
           </div>
         ))}
       </div>
@@ -1018,10 +1019,10 @@ function AdminDashboard() {
           <div style={{ height: 220 }}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={ADMIN_CHARTS.attendance}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
-                <XAxis dataKey="day" stroke="#9CA3AF" fontSize={12} />
-                <YAxis stroke="#9CA3AF" fontSize={12} />
-                <Tooltip contentStyle={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff" }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis dataKey="day" stroke="#6b7280" fontSize={12} />
+                <YAxis stroke="#6b7280" fontSize={12} />
+                <Tooltip contentStyle={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827" }} />
                 <Bar dataKey="total" fill={T.accent} radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
@@ -1031,10 +1032,10 @@ function AdminDashboard() {
           <div style={{ height: 220 }}>
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={ADMIN_CHARTS.revenue}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#2a2a2a" />
-                <XAxis dataKey="month" stroke="#9CA3AF" fontSize={12} />
-                <YAxis stroke="#9CA3AF" fontSize={12} tickFormatter={v => `$${v / 1000}k`} />
-                <Tooltip contentStyle={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff" }} formatter={(v) => [`$${v.toLocaleString()}`, "Revenue"]} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis dataKey="month" stroke="#6b7280" fontSize={12} />
+                <YAxis stroke="#6b7280" fontSize={12} tickFormatter={v => `$${v / 1000}k`} />
+                <Tooltip contentStyle={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827" }} formatter={(v) => [`$${v.toLocaleString()}`, "Revenue"]} />
                 <defs>
                   <linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor={T.accent} stopOpacity={0.3} />
@@ -1055,7 +1056,7 @@ function AdminDashboard() {
                 <Pie data={ADMIN_CHARTS.membershipBreakdown} cx="50%" cy="50%" innerRadius={50} outerRadius={80} dataKey="value" paddingAngle={4}>
                   {ADMIN_CHARTS.membershipBreakdown.map((entry, i) => (<Cell key={i} fill={entry.color} />))}
                 </Pie>
-                <Tooltip contentStyle={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff" }} />
+                <Tooltip contentStyle={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827" }} />
               </PieChart>
             </ResponsiveContainer>
           </div>
@@ -1063,7 +1064,7 @@ function AdminDashboard() {
             {ADMIN_CHARTS.membershipBreakdown.map((entry, i) => (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: 4 }}>
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: entry.color }} />
-                <span style={{ fontSize: 11, color: "#9ca3af" }}>{entry.name} ({entry.value})</span>
+                <span style={{ fontSize: 11, color: "#6b7280" }}>{entry.name} ({entry.value})</span>
               </div>
             ))}
           </div>
@@ -1075,7 +1076,7 @@ function AdminDashboard() {
                 <Pie data={ADMIN_CHARTS.locationBreakdown} cx="50%" cy="50%" innerRadius={50} outerRadius={80} dataKey="value" paddingAngle={4}>
                   {ADMIN_CHARTS.locationBreakdown.map((entry, i) => (<Cell key={i} fill={entry.color} />))}
                 </Pie>
-                <Tooltip contentStyle={{ backgroundColor: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff" }} />
+                <Tooltip contentStyle={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827" }} />
               </PieChart>
             </ResponsiveContainer>
           </div>
@@ -1083,7 +1084,7 @@ function AdminDashboard() {
             {ADMIN_CHARTS.locationBreakdown.map((entry, i) => (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: 4 }}>
                 <div style={{ width: 8, height: 8, borderRadius: "50%", background: entry.color }} />
-                <span style={{ fontSize: 11, color: "#9ca3af" }}>{entry.name} ({entry.value}%)</span>
+                <span style={{ fontSize: 11, color: "#6b7280" }}>{entry.name} ({entry.value}%)</span>
               </div>
             ))}
           </div>
@@ -1100,43 +1101,43 @@ function AdminMembersPage() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#fff", margin: 0 }}>Members</h1>
+        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#111827", margin: 0 }}>Members</h1>
         <button style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 16px", borderRadius: 8, border: "none", background: T.accent, color: "#fff", fontWeight: 600, fontSize: 13, cursor: "pointer" }}><UserPlus size={16} /> Add Member</button>
       </div>
       <div style={{ display: "flex", gap: 10 }}>
         <div style={{ flex: 1, position: "relative" }}>
           <Search size={16} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", color: "#6b7280" }} />
-          <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search members..." style={{ width: "100%", padding: "10px 12px 10px 36px", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
+          <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search members..." style={{ width: "100%", padding: "10px 12px 10px 36px", background: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
         </div>
         <div style={{ display: "flex", gap: 4 }}>
           {["all", "active", "frozen"].map(f => (
-            <button key={f} onClick={() => setFilter(f)} style={{ padding: "8px 14px", borderRadius: 8, border: "none", fontSize: 12, fontWeight: 600, cursor: "pointer", textTransform: "capitalize", background: filter === f ? T.accent : "#1a1a1a", color: filter === f ? "#fff" : "#9ca3af" }}>{f}</button>
+            <button key={f} onClick={() => setFilter(f)} style={{ padding: "8px 14px", borderRadius: 8, border: `1px solid ${filter === f ? T.accent : "#e5e7eb"}`, fontSize: 12, fontWeight: 600, cursor: "pointer", textTransform: "capitalize", background: filter === f ? T.accent : "#fff", color: filter === f ? "#fff" : T.textMuted }}>{f}</button>
           ))}
         </div>
       </div>
-      <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 12, overflow: "hidden" }}>
+      <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, overflow: "hidden" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
-            <tr style={{ borderBottom: "1px solid #2a2a2a" }}>
+            <tr style={{ borderBottom: "1px solid #e5e7eb" }}>
               {["Member", "Membership", "Studio", "Status", "Classes", "Last Visit"].map(h => (
-                <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: "#9ca3af", fontWeight: 600, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
+                <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: "#6b7280", fontWeight: 600, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {filtered.map(m => (
-              <tr key={m.id} style={{ borderBottom: "1px solid #2a2a2a" }}>
+              <tr key={m.id} style={{ borderBottom: "1px solid #e5e7eb" }}>
                 <td style={{ padding: "12px 16px" }}>
-                  <p style={{ color: "#fff", fontWeight: 600, margin: 0 }}>{m.name}</p>
+                  <p style={{ color: "#111827", fontWeight: 600, margin: 0 }}>{m.name}</p>
                   <p style={{ color: "#6b7280", fontSize: 12, margin: "2px 0 0" }}>{m.email}</p>
                 </td>
-                <td style={{ padding: "12px 16px", color: "#d1d5db" }}>{m.membership}</td>
-                <td style={{ padding: "12px 16px", color: "#9ca3af", fontSize: 12 }}>{m.homeStudio}</td>
+                <td style={{ padding: "12px 16px", color: "#374151" }}>{m.membership}</td>
+                <td style={{ padding: "12px 16px", color: "#6b7280", fontSize: 12 }}>{m.homeStudio}</td>
                 <td style={{ padding: "12px 16px" }}>
                   <span style={{ padding: "3px 8px", borderRadius: 6, fontSize: 11, fontWeight: 600, textTransform: "capitalize", background: m.status === "active" ? `${T.accent}20` : `${T.warning}20`, color: m.status === "active" ? T.accent : T.warning }}>{m.status}</span>
                 </td>
-                <td style={{ padding: "12px 16px", color: "#d1d5db", fontFamily: "monospace" }}>{m.checkIns}</td>
-                <td style={{ padding: "12px 16px", color: "#9ca3af", fontSize: 12 }}>{formatDateShort(m.lastVisit)}</td>
+                <td style={{ padding: "12px 16px", color: "#374151", fontFamily: "monospace" }}>{m.checkIns}</td>
+                <td style={{ padding: "12px 16px", color: "#6b7280", fontSize: 12 }}>{formatDateShort(m.lastVisit)}</td>
               </tr>
             ))}
           </tbody>
@@ -1150,25 +1151,25 @@ function AdminSchedulePage() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#fff", margin: 0 }}>Schedule Management</h1>
+        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#111827", margin: 0 }}>Schedule Management</h1>
         <button style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 16px", borderRadius: 8, border: "none", background: T.accent, color: "#fff", fontWeight: 600, fontSize: 13, cursor: "pointer" }}><Plus size={16} /> Add Class</button>
       </div>
-      <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 12, overflow: "hidden" }}>
+      <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, overflow: "hidden" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
-            <tr style={{ borderBottom: "1px solid #2a2a2a" }}>
+            <tr style={{ borderBottom: "1px solid #e5e7eb" }}>
               {["Time", "Class", "Teacher", "Location", "Capacity", "Status", ""].map(h => (
-                <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: "#9ca3af", fontWeight: 600, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
+                <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: "#6b7280", fontWeight: 600, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {CLASSES_TODAY.map(c => (
-              <tr key={c.id} style={{ borderBottom: "1px solid #2a2a2a" }}>
-                <td style={{ padding: "12px 16px", color: "#fff", fontFamily: "monospace" }}>{fmtTime(c.time)}</td>
-                <td style={{ padding: "12px 16px", color: "#d1d5db", fontWeight: 600 }}>{c.type}</td>
-                <td style={{ padding: "12px 16px", color: "#d1d5db" }}>{c.coach}</td>
-                <td style={{ padding: "12px 16px", color: "#9ca3af" }}>{c.location}</td>
+              <tr key={c.id} style={{ borderBottom: "1px solid #e5e7eb" }}>
+                <td style={{ padding: "12px 16px", color: "#111827", fontFamily: "monospace" }}>{fmtTime(c.time)}</td>
+                <td style={{ padding: "12px 16px", color: "#374151", fontWeight: 600 }}>{c.type}</td>
+                <td style={{ padding: "12px 16px", color: "#374151" }}>{c.coach}</td>
+                <td style={{ padding: "12px 16px", color: "#6b7280" }}>{c.location}</td>
                 <td style={{ padding: "12px 16px" }}>
                   <span style={{ fontFamily: "monospace", fontWeight: 600, color: c.registered >= c.capacity ? T.warning : T.accent }}>{c.registered}/{c.capacity}</span>
                 </td>
@@ -1192,25 +1193,25 @@ function AdminTeachersPage() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#fff", margin: 0 }}>Teachers</h1>
+        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#111827", margin: 0 }}>Teachers</h1>
         <button style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 16px", borderRadius: 8, border: "none", background: T.accent, color: "#fff", fontWeight: 600, fontSize: 13, cursor: "pointer" }}><UserPlus size={16} /> Add Teacher</button>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 14 }}>
         {TEACHERS.map(teacher => (
-          <div key={teacher.id} style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 12, padding: 18 }}>
+          <div key={teacher.id} style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 18 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
               <div style={{ width: 48, height: 48, borderRadius: 10, background: `linear-gradient(135deg, ${T.accent}, ${T.accentDark})`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Outfit', serif", fontSize: 20, color: "#fff", fontWeight: 600 }}>{teacher.firstName[0]}{teacher.lastName[0]}</div>
               <div>
-                <h3 style={{ fontSize: 15, fontWeight: 700, color: "#fff", margin: 0 }}>{teacher.firstName} {teacher.lastName}</h3>
+                <h3 style={{ fontSize: 15, fontWeight: 700, color: "#111827", margin: 0 }}>{teacher.firstName} {teacher.lastName}</h3>
                 <p style={{ fontSize: 12, color: T.accent, fontWeight: 600, margin: "2px 0 0" }}>{teacher.role}</p>
               </div>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 10 }}>
-              {teacher.certs.map(c => (<span key={c} style={{ fontSize: 10, fontWeight: 600, padding: "2px 6px", borderRadius: 4, background: "#2a2a2a", color: "#9ca3af" }}>{c}</span>))}
+              {teacher.certs.map(c => (<span key={c} style={{ fontSize: 10, fontWeight: 600, padding: "2px 6px", borderRadius: 4, background: "#f3f4f6", color: T.textMuted }}>{c}</span>))}
             </div>
             <div style={{ display: "flex", gap: 6 }}>
-              <button style={{ flex: 1, padding: "8px 0", borderRadius: 6, border: "1px solid #2a2a2a", background: "transparent", color: "#d1d5db", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Edit</button>
-              <button style={{ flex: 1, padding: "8px 0", borderRadius: 6, border: "1px solid #2a2a2a", background: "transparent", color: "#d1d5db", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Schedule</button>
+              <button style={{ flex: 1, padding: "8px 0", borderRadius: 6, border: "1px solid #e5e7eb", background: "transparent", color: "#374151", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Edit</button>
+              <button style={{ flex: 1, padding: "8px 0", borderRadius: 6, border: "1px solid #e5e7eb", background: "transparent", color: "#374151", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Schedule</button>
             </div>
           </div>
         ))}
@@ -1225,30 +1226,30 @@ function AdminEventsPage() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#fff", margin: 0 }}>Events</h1>
+        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#111827", margin: 0 }}>Events</h1>
         <button style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 16px", borderRadius: 8, border: "none", background: T.accent, color: "#fff", fontWeight: 600, fontSize: 13, cursor: "pointer" }}><Plus size={16} /> Add Event</button>
       </div>
       <div style={{ position: "relative" }}>
         <Search size={16} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", color: "#6b7280" }} />
-        <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search events…" style={{ width: "100%", padding: "10px 12px 10px 36px", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
+        <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search events…" style={{ width: "100%", padding: "10px 12px 10px 36px", background: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
       </div>
-      <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 12, overflow: "hidden" }}>
+      <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, overflow: "hidden" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
-            <tr style={{ borderBottom: "1px solid #2a2a2a" }}>
+            <tr style={{ borderBottom: "1px solid #e5e7eb" }}>
               {["Event", "Date", "Type", "Registered", "Max", "Status", ""].map(h => (
-                <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: "#9ca3af", fontWeight: 600, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
+                <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: "#6b7280", fontWeight: 600, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {filtered.map(e => (
-              <tr key={e.id} style={{ borderBottom: "1px solid #2a2a2a" }}>
-                <td style={{ padding: "12px 16px", color: "#fff", fontWeight: 600 }}>{e.name}</td>
-                <td style={{ padding: "12px 16px", color: "#d1d5db" }}>{formatDateShort(e.date)}</td>
-                <td style={{ padding: "12px 16px", color: "#9ca3af", fontSize: 12 }}>{e.type}</td>
-                <td style={{ padding: "12px 16px", color: "#d1d5db" }}>{e.registered}</td>
-                <td style={{ padding: "12px 16px", color: "#d1d5db" }}>{e.maxParticipants}</td>
+              <tr key={e.id} style={{ borderBottom: "1px solid #e5e7eb" }}>
+                <td style={{ padding: "12px 16px", color: "#111827", fontWeight: 600 }}>{e.name}</td>
+                <td style={{ padding: "12px 16px", color: "#374151" }}>{formatDateShort(e.date)}</td>
+                <td style={{ padding: "12px 16px", color: "#6b7280", fontSize: 12 }}>{e.type}</td>
+                <td style={{ padding: "12px 16px", color: "#374151" }}>{e.registered}</td>
+                <td style={{ padding: "12px 16px", color: "#374151" }}>{e.maxParticipants}</td>
                 <td style={{ padding: "12px 16px" }}>
                   <span style={{ padding: "3px 8px", borderRadius: 6, fontSize: 11, fontWeight: 600, background: `${T.accent}20`, color: T.accent }}>{e.status}</span>
                 </td>
@@ -1271,30 +1272,30 @@ function AdminPricingPage() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#fff", margin: 0 }}>Pricing & Membership Tiers</h1>
+        <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#111827", margin: 0 }}>Pricing & Membership Tiers</h1>
         <button style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 16px", borderRadius: 8, border: "none", background: T.accent, color: "#fff", fontWeight: 600, fontSize: 13, cursor: "pointer" }}><Plus size={16} /> Add Tier</button>
       </div>
       <div style={{ position: "relative" }}>
         <Search size={16} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", color: "#6b7280" }} />
-        <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search tiers…" style={{ width: "100%", padding: "10px 12px 10px 36px", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
+        <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search tiers…" style={{ width: "100%", padding: "10px 12px 10px 36px", background: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
       </div>
-      <div style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: 12, overflow: "hidden" }}>
+      <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, overflow: "hidden" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
           <thead>
-            <tr style={{ borderBottom: "1px solid #2a2a2a" }}>
+            <tr style={{ borderBottom: "1px solid #e5e7eb" }}>
               {["Tier", "Price", "Period", "Popular", "Features", ""].map(h => (
-                <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: "#9ca3af", fontWeight: 600, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
+                <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: "#6b7280", fontWeight: 600, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.05em" }}>{h}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {filtered.map(m => (
-              <tr key={m.id} style={{ borderBottom: "1px solid #2a2a2a" }}>
-                <td style={{ padding: "12px 16px", color: "#fff", fontWeight: 600 }}>{m.name}</td>
-                <td style={{ padding: "12px 16px", color: "#d1d5db" }}>${m.price}</td>
-                <td style={{ padding: "12px 16px", color: "#9ca3af", fontSize: 12 }}>{m.period}</td>
+              <tr key={m.id} style={{ borderBottom: "1px solid #e5e7eb" }}>
+                <td style={{ padding: "12px 16px", color: "#111827", fontWeight: 600 }}>{m.name}</td>
+                <td style={{ padding: "12px 16px", color: "#374151" }}>${m.price}</td>
+                <td style={{ padding: "12px 16px", color: "#6b7280", fontSize: 12 }}>{m.period}</td>
                 <td style={{ padding: "12px 16px", color: m.popular ? T.success : "#9ca3af" }}>{m.popular ? "Yes" : "No"}</td>
-                <td style={{ padding: "12px 16px", color: "#9ca3af", fontSize: 11 }}>{m.features.length} features</td>
+                <td style={{ padding: "12px 16px", color: "#6b7280", fontSize: 11 }}>{m.features.length} features</td>
                 <td style={{ padding: "12px 16px", display: "flex", gap: 6 }}>
                   <button style={{ padding: "4px 8px", borderRadius: 4, border: "none", background: "transparent", color: T.accent, fontSize: 11, cursor: "pointer" }}>Edit</button>
                   <button style={{ padding: "4px 8px", borderRadius: 4, border: "none", background: "transparent", color: T.warning, fontSize: 11, cursor: "pointer" }}>Delete</button>
@@ -1312,24 +1313,24 @@ function AdminCommsPage() {
   const [msg, setMsg] = useState({ title: "", body: "", audience: "all" });
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#fff", margin: 0 }}>Broadcast</h1>
+      <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#111827", margin: 0 }}>Broadcast</h1>
       <AdminCard title="Send Announcement">
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <div>
-            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#9ca3af", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Audience</label>
+            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#6b7280", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Audience</label>
             <div style={{ display: "flex", gap: 4 }}>
               {["all", "unlimited", "class-card", "intro"].map(a => (
-                <button key={a} onClick={() => setMsg({ ...msg, audience: a })} style={{ padding: "6px 12px", borderRadius: 6, border: "none", fontSize: 12, fontWeight: 600, cursor: "pointer", textTransform: "capitalize", background: msg.audience === a ? T.accent : "#2a2a2a", color: msg.audience === a ? "#fff" : "#9ca3af" }}>{a === "all" ? "All Members" : a}</button>
+                <button key={a} onClick={() => setMsg({ ...msg, audience: a })} style={{ padding: "6px 12px", borderRadius: 6, border: `1px solid ${msg.audience === a ? T.accent : "#e5e7eb"}`, fontSize: 12, fontWeight: 600, cursor: "pointer", textTransform: "capitalize", background: msg.audience === a ? T.accent : "#f9fafb", color: msg.audience === a ? "#fff" : T.textMuted }}>{a === "all" ? "All Members" : a}</button>
               ))}
             </div>
           </div>
           <div>
-            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#9ca3af", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Title</label>
-            <input value={msg.title} onChange={e => setMsg({ ...msg, title: e.target.value })} placeholder="Announcement title…" style={{ width: "100%", padding: "10px 12px", background: "#0f1724", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
+            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#6b7280", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Title</label>
+            <input value={msg.title} onChange={e => setMsg({ ...msg, title: e.target.value })} placeholder="Announcement title…" style={{ width: "100%", padding: "10px 12px", background: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
           </div>
           <div>
-            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#9ca3af", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Message</label>
-            <textarea value={msg.body} onChange={e => setMsg({ ...msg, body: e.target.value })} placeholder="Write your message…" rows={4} style={{ width: "100%", padding: "10px 12px", background: "#0f1724", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box", fontFamily: "inherit", resize: "vertical" }} />
+            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#6b7280", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Message</label>
+            <textarea value={msg.body} onChange={e => setMsg({ ...msg, body: e.target.value })} placeholder="Write your message…" rows={4} style={{ width: "100%", padding: "10px 12px", background: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827", fontSize: 13, outline: "none", boxSizing: "border-box", fontFamily: "inherit", resize: "vertical" }} />
           </div>
           <button style={{ padding: "10px 20px", borderRadius: 8, border: "none", background: T.accent, color: "#fff", fontWeight: 700, cursor: "pointer", fontSize: 14, display: "flex", alignItems: "center", gap: 6, alignSelf: "flex-start" }}><Send size={14} /> Send Announcement</button>
         </div>
@@ -1342,22 +1343,22 @@ function AdminSettingsPage() {
   const [settings, setSettings] = useState({ studioName: "ELU Yoga", timeZone: "America/Los_Angeles", theme: "dark" });
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#fff", margin: 0 }}>Settings</h1>
+      <h1 style={{ fontFamily: "'Outfit', serif", fontSize: 28, color: "#111827", margin: 0 }}>Settings</h1>
       <AdminCard title="Studio Settings">
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <div>
-            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#9ca3af", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Studio Name</label>
-            <input value={settings.studioName} onChange={e => setSettings({ ...settings, studioName: e.target.value })} style={{ width: "100%", padding: "10px 12px", background: "#0f1724", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
+            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#6b7280", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Studio Name</label>
+            <input value={settings.studioName} onChange={e => setSettings({ ...settings, studioName: e.target.value })} style={{ width: "100%", padding: "10px 12px", background: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
           </div>
           <div>
-            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#9ca3af", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Time Zone</label>
-            <input value={settings.timeZone} onChange={e => setSettings({ ...settings, timeZone: e.target.value })} style={{ width: "100%", padding: "10px 12px", background: "#0f1724", border: "1px solid #2a2a2a", borderRadius: 8, color: "#fff", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
+            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#6b7280", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Time Zone</label>
+            <input value={settings.timeZone} onChange={e => setSettings({ ...settings, timeZone: e.target.value })} style={{ width: "100%", padding: "10px 12px", background: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, color: "#111827", fontSize: 13, outline: "none", boxSizing: "border-box" }} />
           </div>
           <div>
-            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#9ca3af", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Theme</label>
+            <label style={{ display: "block", fontSize: 11, fontWeight: 600, color: "#6b7280", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>Theme</label>
             <div style={{ display: "flex", gap: 4 }}>
               {["dark", "light"].map(t => (
-                <button key={t} onClick={() => setSettings({ ...settings, theme: t })} style={{ padding: "6px 12px", borderRadius: 6, border: "none", fontSize: 12, fontWeight: 600, cursor: "pointer", textTransform: "capitalize", background: settings.theme === t ? T.accent : "#2a2a2a", color: settings.theme === t ? "#fff" : "#9ca3af" }}>{t}</button>
+                <button key={t} onClick={() => setSettings({ ...settings, theme: t })} style={{ padding: "6px 12px", borderRadius: 6, border: `1px solid ${settings.theme === t ? T.accent : "#e5e7eb"}`, fontSize: 12, fontWeight: 600, cursor: "pointer", textTransform: "capitalize", background: settings.theme === t ? T.accent : "#f9fafb", color: settings.theme === t ? "#fff" : T.textMuted }}>{t}</button>
               ))}
             </div>
           </div>
@@ -1371,9 +1372,9 @@ function AdminSettingsPage() {
 // ═══════════════════════════════════════════════════════════════
 //  MAIN APP
 // ═══════════════════════════════════════════════════════════════
-export default function App({ onAdminChange, forceAdmin }) {
-  const [page, setPage] = useState(forceAdmin ? "admin-dashboard" : "home");
-  const [isAdmin, setIsAdmin] = useState(!!forceAdmin);
+export default function App({ onEnterAdmin, onExitAdmin, startInAdmin }) {
+  const [page, setPage] = useState(startInAdmin ? "admin-dashboard" : "home");
+  const [isAdmin, setIsAdmin] = useState(!!startInAdmin);
   const [showSettings, setShowSettings] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -1386,9 +1387,16 @@ export default function App({ onAdminChange, forceAdmin }) {
     if (contentRef.current) contentRef.current.scrollTo(0, 0);
   }, [page]);
 
-  useEffect(() => {
-    if (onAdminChange) onAdminChange(isAdmin);
-  }, [isAdmin, onAdminChange]);
+  const enterAdmin = () => {
+    if (onEnterAdmin) { onEnterAdmin(); return; }
+    setIsAdmin(true);
+    setPage("admin-dashboard");
+  };
+  const exitAdmin = () => {
+    if (onExitAdmin) { onExitAdmin(); return; }
+    setIsAdmin(false);
+    setPage("home");
+  };
 
   const handleLogoClick = () => {
     if (page !== "home") setPage("home");
@@ -1402,17 +1410,16 @@ export default function App({ onAdminChange, forceAdmin }) {
   const mainTabs = [
     { id: "home", label: "Home", icon: Home },
     { id: "schedule", label: "Schedule", icon: CalendarDays },
-    { id: "community", label: "Community", icon: Heart },
     { id: "practice", label: "Practice", icon: TrendingUp },
+    { id: "community", label: "Community", icon: Heart },
     { id: "more", label: "More", icon: Menu },
   ];
 
   const moreItems = [
-    { id: "classes", label: "Classes", icon: Waves },
+    { id: "classes", label: "Classes", icon: AlignJustify },
     { id: "teachers", label: "Teachers", icon: Users },
-    { id: "events", label: "Events", icon: Calendar },
     { id: "membership", label: "Membership", icon: CreditCard },
-    { id: "locations", label: "Studios", icon: MapPin },
+    { id: "events", label: "Events", icon: CalendarDays },
   ];
 
   const isMoreActive = moreItems.some(item => item.id === page);
@@ -1451,34 +1458,34 @@ export default function App({ onAdminChange, forceAdmin }) {
     }
   };
 
-  // ADMIN LAYOUT
+  // ADMIN LAYOUT — light scheme, full-window takeover
   if (isAdmin) {
     return (
       <AppContext.Provider value={{ page, setPage, classRegistrations, registerForClass, openReservation, feedCelebrations, celebrateFeed }}>
-        <div style={{ display: "flex", minHeight: "100vh", background: "#0d1520", fontFamily: "'DM Sans', system-ui, sans-serif", color: "#e2e8f0" }}>
-          <aside style={{ width: 240, background: "#111827", borderRight: "1px solid #2a2a2a", display: "flex", flexDirection: "column", position: "fixed", height: "100vh", zIndex: 10 }}>
-            <div style={{ padding: "16px 14px", borderBottom: "1px solid #2a2a2a", display: "flex", alignItems: "center", gap: 10 }}>
+        <div style={{ display: "flex", minHeight: "100vh", background: "#f7f8fa", fontFamily: "'DM Sans', system-ui, sans-serif", color: T.text }}>
+          <aside style={{ width: 240, background: "#fff", borderRight: "1px solid #e5e7eb", display: "flex", flexDirection: "column", position: "fixed", height: "100vh", zIndex: 10 }}>
+            <div style={{ padding: "16px 14px", borderBottom: "1px solid #e5e7eb", display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ width: 36, height: 36, borderRadius: 8, background: T.accent, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Outfit', serif", fontSize: 18, color: "#fff", fontWeight: 700 }}>E</div>
               <div>
-                <span style={{ fontFamily: "'Outfit', serif", fontSize: 18, color: "#fff", fontWeight: 600, display: "block", lineHeight: 1 }}>ELU</span>
-                <span style={{ fontSize: 9, color: "#71717a", textTransform: "uppercase", letterSpacing: "0.15em" }}>Admin Panel</span>
+                <span style={{ fontFamily: "'Outfit', serif", fontSize: 18, color: T.text, fontWeight: 600, display: "block", lineHeight: 1 }}>ELU</span>
+                <span style={{ fontSize: 9, color: T.textFaint, textTransform: "uppercase", letterSpacing: "0.15em" }}>Admin Panel</span>
               </div>
             </div>
             <nav style={{ flex: 1, padding: "12px 8px", overflow: "auto" }}>
-              <p style={{ fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "#71717a", padding: "0 10px", margin: "0 0 8px" }}>Management</p>
+              <p style={{ fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: T.textFaint, padding: "0 10px", margin: "0 0 8px" }}>Management</p>
               {adminTabs.map(tab => {
                 const active = page === tab.id;
                 return (
-                  <button key={tab.id} onClick={() => setPage(tab.id)} style={{ display: "flex", alignItems: "center", gap: 10, width: "100%", padding: "10px 12px", borderRadius: 8, border: "none", background: active ? T.accent : "transparent", color: active ? "#fff" : "#a1a1aa", fontSize: 13, fontWeight: active ? 600 : 400, cursor: "pointer", marginBottom: 2, textAlign: "left" }}>
+                  <button key={tab.id} onClick={() => setPage(tab.id)} style={{ display: "flex", alignItems: "center", gap: 10, width: "100%", padding: "10px 12px", borderRadius: 8, border: "none", background: active ? T.accent : "transparent", color: active ? "#fff" : T.textMuted, fontSize: 13, fontWeight: active ? 600 : 500, cursor: "pointer", marginBottom: 2, textAlign: "left" }}>
                     <tab.icon size={18} />
                     <span>{tab.label}</span>
-                    {active && <ChevronRight size={14} style={{ marginLeft: "auto", opacity: 0.6 }} />}
+                    {active && <ChevronRight size={14} style={{ marginLeft: "auto", opacity: 0.8 }} />}
                   </button>
                 );
               })}
             </nav>
-            <div style={{ borderTop: "1px solid #2a2a2a", padding: "10px 8px" }}>
-              <button onClick={() => { setIsAdmin(false); setPage("home"); }} style={{ display: "flex", alignItems: "center", gap: 10, width: "100%", padding: "10px 12px", borderRadius: 8, border: "none", background: "transparent", color: "#a1a1aa", fontSize: 13, cursor: "pointer", textAlign: "left" }}>
+            <div style={{ borderTop: "1px solid #e5e7eb", padding: "10px 8px" }}>
+              <button onClick={exitAdmin} style={{ display: "flex", alignItems: "center", gap: 10, width: "100%", padding: "10px 12px", borderRadius: 8, border: "none", background: "transparent", color: T.textMuted, fontSize: 13, cursor: "pointer", textAlign: "left" }}>
                 <LogOut size={18} /><span>Exit Admin</span>
               </button>
             </div>
@@ -1492,9 +1499,9 @@ export default function App({ onAdminChange, forceAdmin }) {
   // CONSUMER LAYOUT
   return (
     <AppContext.Provider value={{ page, setPage, classRegistrations, registerForClass, openReservation, feedCelebrations, celebrateFeed }}>
-      <div style={{ height: "100%", display: "flex", flexDirection: "column", background: T.bgDim, fontFamily: "'DM Sans', system-ui, sans-serif", position: "relative" }}>
+      <div style={{ position: "absolute", inset: 0, background: T.bgDim, fontFamily: "'DM Sans', system-ui, sans-serif", overflow: "hidden" }}>
         {/* Header */}
-        <header style={{ position: "sticky", top: 0, zIndex: 30, background: T.bg, color: "#fff", padding: "10px 14px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <header style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 30, background: T.bg, color: "#fff", padding: "10px 14px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <button onClick={handleLogoClick} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", cursor: "pointer", color: "#fff" }}>
             <div style={{ width: 38, height: 38, borderRadius: 10, background: T.accent, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Outfit', serif", fontSize: 20, color: "#fff", fontWeight: 700 }}>E</div>
             <div style={{ display: "flex", flexDirection: "column" }}>
@@ -1503,7 +1510,7 @@ export default function App({ onAdminChange, forceAdmin }) {
             </div>
           </button>
           <div style={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <button onClick={() => { setIsAdmin(true); setPage("admin-dashboard"); }} style={{ padding: 8, borderRadius: 8, border: "none", background: "transparent", cursor: "pointer", color: T.accent }}><Shield size={20} /></button>
+            <button onClick={enterAdmin} title="Open Admin" style={{ padding: 8, borderRadius: 8, border: "none", background: "transparent", cursor: "pointer", color: T.accent }}><Shield size={20} /></button>
             <button onClick={() => setShowNotifications(true)} style={{ padding: 8, borderRadius: 8, border: "none", background: "transparent", cursor: "pointer", color: "#fff", position: "relative" }}>
               <Bell size={20} />
               {unreadCount > 0 && <span style={{ position: "absolute", top: 4, right: 4, width: 14, height: 14, borderRadius: "50%", background: T.accent, fontSize: 9, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>{unreadCount}</span>}
@@ -1512,24 +1519,24 @@ export default function App({ onAdminChange, forceAdmin }) {
           </div>
         </header>
 
-        {/* Content */}
-        <main ref={contentRef} style={{ flex: 1, overflowY: "auto", paddingBottom: 12 }}>{renderPage()}</main>
+        {/* Content area — fills between header and bottom nav */}
+        <main ref={contentRef} className="app-scroll" style={{ position: "absolute", top: 58, left: 0, right: 0, bottom: 60, overflowY: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}>{renderPage()}</main>
 
-        {/* More Menu */}
+        {/* More Menu bottom sheet */}
         {showMore && (
-          <div onClick={() => setShowMore(false)} style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,.5)", backdropFilter: "blur(4px)", zIndex: 40 }}>
-            <div onClick={e => e.stopPropagation()} style={{ position: "absolute", bottom: 56, left: 16, right: 16, maxWidth: 358, margin: "0 auto", background: T.bgCard, borderRadius: 16, padding: "14px 12px", boxShadow: "0 8px 32px rgba(0,0,0,.15)" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 6px 8px" }}>
-                <span style={{ fontFamily: "'Outfit', serif", fontSize: 20, fontWeight: 600 }}>More</span>
+          <div onClick={() => setShowMore(false)} style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,.5)", backdropFilter: "blur(4px)", zIndex: 55 }}>
+            <div onClick={e => e.stopPropagation()} style={{ position: "absolute", bottom: 72, left: 16, right: 16, background: "#fff", borderRadius: 16, padding: "18px 16px", boxShadow: "0 8px 32px rgba(0,0,0,.15)", border: `1px solid ${T.borderLight}` }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 2px 14px" }}>
+                <span style={{ fontFamily: "'Outfit', serif", fontSize: 20, fontWeight: 600, color: T.text }}>More</span>
                 <button onClick={() => setShowMore(false)} style={{ padding: 4, borderRadius: 6, border: "none", background: "transparent", cursor: "pointer" }}><X size={18} color={T.textMuted} /></button>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                 {moreItems.map(item => {
                   const active = page === item.id;
                   return (
-                    <button key={item.id} onClick={() => { setPage(item.id); setShowMore(false); }} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, padding: "14px 8px", borderRadius: 10, border: "none", cursor: "pointer", background: active ? T.accentGhost : T.bgDim, color: active ? T.accent : T.textMuted }}>
-                      <item.icon size={22} />
-                      <span style={{ fontSize: 12, fontWeight: 600 }}>{item.label}</span>
+                    <button key={item.id} onClick={() => { setPage(item.id); setShowMore(false); }} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10, padding: "22px 12px", borderRadius: 12, border: `1px solid ${active ? T.accentBorder : T.border}`, cursor: "pointer", background: active ? T.accentGhost : "#fff", color: active ? T.accent : T.text }}>
+                      <item.icon size={26} />
+                      <span style={{ fontSize: 14, fontWeight: 600 }}>{item.label}</span>
                     </button>
                   );
                 })}
@@ -1538,33 +1545,28 @@ export default function App({ onAdminChange, forceAdmin }) {
           </div>
         )}
 
-        {/* Bottom Nav */}
-        <nav style={{ flexShrink: 0, zIndex: 30, background: T.bgCard, borderTop: `1px solid ${T.border}` }}>
-          <div style={{ display: "flex", justifyContent: "space-around", padding: "6px 4px 10px" }}>
-            {mainTabs.map(tab => {
-              const active = tab.id === "more" ? (isMoreActive || showMore) : page === tab.id;
-              if (tab.id === "more") {
-                return (
-                  <button key={tab.id} onClick={() => setShowMore(true)} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, padding: "6px 12px", borderRadius: 10, border: "none", background: "transparent", cursor: "pointer", color: active ? T.accent : T.textFaint }}>
-                    <tab.icon size={20} strokeWidth={active ? 2.5 : 2} />
-                    <span style={{ fontSize: 10, fontWeight: active ? 700 : 500 }}>{tab.label}</span>
-                  </button>
-                );
-              }
-              return (
-                <button key={tab.id} onClick={() => setPage(tab.id)} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, padding: "6px 12px", borderRadius: 10, border: "none", background: "transparent", cursor: "pointer", color: active ? T.accent : T.textFaint }}>
-                  <tab.icon size={20} strokeWidth={active ? 2.5 : 2} />
-                  <span style={{ fontSize: 10, fontWeight: active ? 700 : 500 }}>{tab.label}</span>
-                </button>
-              );
-            })}
-          </div>
+        {/* Bottom Nav — absolute, height 60px, always visible */}
+        <nav style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 60, zIndex: 50, background: "#fff", borderTop: "1px solid #eee", display: "flex", alignItems: "stretch", justifyContent: "space-around", padding: "0 4px" }}>
+          {mainTabs.map(tab => {
+            const active = tab.id === "more" ? (isMoreActive || showMore) : page === tab.id;
+            const onClick = tab.id === "more" ? () => setShowMore(true) : () => setPage(tab.id);
+            return (
+              <button key={tab.id} onClick={onClick} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 3, padding: 0, border: "none", background: "transparent", cursor: "pointer", color: active ? T.accent : T.textFaint }}>
+                <tab.icon size={20} strokeWidth={active ? 2.5 : 2} />
+                <span style={{ fontSize: 10, fontWeight: active ? 700 : 500 }}>{tab.label}</span>
+              </button>
+            );
+          })}
         </nav>
 
         {/* Modals */}
         {showSettings && <SettingsModal onClose={() => setShowSettings(false)} />}
         {showNotifications && <NotificationsModal onClose={() => setShowNotifications(false)} />}
         {reservationClass && <ReservationModal classData={reservationClass} onConfirm={registerForClass} onClose={() => setReservationClass(null)} />}
+
+        <style>{`
+          .app-scroll::-webkit-scrollbar { display: none; }
+        `}</style>
       </div>
     </AppContext.Provider>
   );

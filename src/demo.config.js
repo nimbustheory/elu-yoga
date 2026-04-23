@@ -1,33 +1,54 @@
-const demoConfig = {
-  studioName: "ELU",
-  studioSubtitle: "YOGA Studio App",
-  tagline: "Find your flow. Join the movement.",
-  logoMark: "E",
-  accentColor: "hsl(220, 50%, 45%)",
-  accentColorLight: "hsl(220, 50%, 95%)",
-  accentColorDark: "hsl(220, 50%, 30%)",
-  textDark: "#151c2a",
-  textMuted: "#555e72",
-  neighborhood: "Downtown Tacoma",
-  city: "Tacoma, WA",
-  website: "eluyoga.com",
+export const DEMO_CONFIG = {
+  studio: {
+    name: "ELU Yoga",
+    tagline: "Hot river flow · Tacoma, WA",
+    logo: "E",
+  },
+  accent: "hsl(220, 50%, 45%)",
+  accentDark: "hsl(220, 50%, 30%)",
   features: [
-    { icon: "CalendarDays", title: "Class Scheduling", desc: "Weekly schedule with real-time reservations" },
-    { icon: "TrendingUp", title: "Practice Tracking", desc: "Reflections, streaks, and milestone badges" },
-    { icon: "Heart", title: "Community Feed", desc: "Member milestones and celebrations" },
-    { icon: "Users", title: "Teacher Profiles", desc: "Bios, certifications, and specialties" },
-    { icon: "CreditCard", title: "Membership Tiers", desc: "Multiple plans from intro to unlimited" },
-    { icon: "Calendar", title: "Events & Workshops", desc: "Special sessions and teacher training" },
-    { icon: "Bell", title: "Smart Notifications", desc: "Class reminders and streak alerts" },
-    { icon: "Shield", title: "Admin Dashboard", desc: "Full analytics, CRM, and broadcast tools" }
+    { label: "Class Scheduling", icon: "Calendar", description: "Hot River Flow, Pilates, Yin and Sculpt across three studios" },
+    { label: "Practice Tracking", icon: "TrendingUp", description: "Reflections, streaks and milestone badges for every class" },
+    { label: "Community Feed", icon: "Heart", description: "Milestones, celebrations and student stories from the ELU fam" },
+    { label: "Teacher Profiles", icon: "Users", description: "Meet Danielle, Alex, Amor and the full ELU teaching team" },
+    { label: "Membership Tiers", icon: "Sparkles", description: "Intro Offer, River and Unlimited — pick the plan that fits" },
+    { label: "Events & Workshops", icon: "Star", description: "Yoga on the Waterfront, teacher trainings and candlelight journeys" },
+    { label: "Smart Notifications", icon: "Bell", description: "Class reminders, waitlist offers and streak nudges" },
+    { label: "Admin Dashboard", icon: "Shield", description: "Full analytics, CRM, scheduling and broadcast for studio staff" },
   ],
   salesCards: [
-    { icon: "Shield", title: "Admin Dashboard", desc: "Full analytics, member CRM, scheduling, and broadcast tools for your downtown Tacoma studio." },
-    { icon: "Mountain", title: "Built for ELU Yoga", desc: "Custom-designed around your hot flow, Vinyasa, and Yin offerings in downtown Tacoma." },
-    { icon: "Users", title: "Community First", desc: "Inclusive atmosphere, free community days, and land acknowledgment -- all reflected in the app." },
-    { icon: "Sparkles", title: "Member Engagement", desc: "Practice streaks, milestone badges, and community celebrations keep members connected." },
-    { icon: "Zap", title: "Custom-Built for You", desc: "Purpose-designed for ELU Yoga's unique style, community, and multi-location needs." }
+    {
+      title: "Admin Dashboard",
+      description: "Manage schedules across Golden Triangle, Sunnyside and Five Points. Track members, send broadcasts, adjust pricing and see studio-level KPIs in one place.",
+      icon: "Shield",
+    },
+    {
+      title: "Built for ELU Yoga",
+      description: "Designed around ELU's Hot River Flow, River Yin, Sculpt and Pilates offerings in downtown Tacoma. Three Tacoma locations, land acknowledgment, intro offers and community days are all woven in. The feel mirrors ELU's 'yoga, no pretense' ethos — warm, inclusive, real.",
+      icon: "Sparkles",
+    },
+    {
+      title: "All-in-One Platform",
+      description: "Class booking, payments, memberships, waitlists, teacher bios, events and push notifications — no third party widgets, no duct tape. One app for the full member journey.",
+      icon: "Layers",
+    },
+    {
+      title: "Member Engagement",
+      description: "Practice streaks, milestone badges, class reflections and a celebratory community feed keep members coming back to the mat — and to ELU.",
+      icon: "Heart",
+    },
+    {
+      title: "Three Tacoma Studios",
+      description: "Golden Triangle · Sunnyside · Five Points. Members see every class across every location, filter by studio, and earn the All-Three-Studios badge.",
+      icon: "Monitor",
+    },
   ],
+  cta: {
+    heading: "Ready to Launch?",
+    subheading: "Your branded app. Your community. Your platform.",
+    buttonText: "Get Started",
+    buttonUrl: "https://lumiclass.app",
+  },
 };
 
-export default demoConfig;
+export default DEMO_CONFIG;
